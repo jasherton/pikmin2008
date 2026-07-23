@@ -16,6 +16,12 @@ if (CLIENT) then
 	SWEP.WepSelectIcon = surface.GetTextureID("weapons/pikmincommand");
 end
 
+function SWEP:CustomAmmoDisplay()
+    self.AmmoDisplay = self.AmmoDisplay or {}
+    self.AmmoDisplay.Draw = false
+    return self.AmmoDisplay
+end
+
 function SWEP:Initialize()
 	self.Owner.HasPikmin = false;
 	self.WhistleSound = CreateSound(self, Sound("pikmin/whistle.wav"));
